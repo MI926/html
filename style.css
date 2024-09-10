@@ -1,0 +1,8 @@
+h1{
+    background-color: aqua;
+    color: rgb(12, 55, 63);
+}
+h1:hover{
+    border-radius: 10px;
+    background: rgb(22, 202, 133);
+}
