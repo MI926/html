@@ -1,8 +1,406 @@
-h1{
-    background-color: aqua;
-    color: rgb(12, 55, 63);
+h1 {
+  background-color: aqua;
+  color: rgb(12, 55, 63);
 }
-h1:hover{
-    border-radius: 10px;
-    background: rgb(22, 202, 133);
+
+h1 {
+  border-radius: 10px;
+  background: rgb(22, 202, 133);
+  max-width: 30%;
+  min-height: 30%;
+  /* box-sizing: border-box; */
+}
+
+h1 {
+  color: chartreuse;
+  padding: 5%;
+}
+
+/* 
+   Cascade or Cascade rule: 
+                - The cascade is the algorithm for solving conflicts where
+                  multiple CSS rules apply to an HTML element.
+
+                - Cascade is the process of determining which styles will be
+                  applied to an HTML element when there are conflicting styles specified.
+
+                - If two conflicting styles have the same specificity, then the order of
+                  declaration becomes the tiebreaker, and the style declared later 
+                  will override the earlier one.
+
+                - The cascade rule considers both specificity and order of declaration, 
+                  with specificity taking precedence over order then styles with higher 
+                  specificity will be applied. 
+
+Specificity: In case of conflicting styles, If there are two or more 
+            CSS rules that point to the same element, the selector with the 
+            highest specificity value will "win", and its style declaration
+            will be applied to that HTML element. 
+
+            - Start at 0, universal selector has 0
+            - id 100
+            - class/pseudo-class/attribute-selector 10
+            - element/pseudo-element 1
+
+            - Internal styles same rules as selectors in external CSS files.
+
+            - Inline style gets a specificity value of 1000
+
+            - If you use the !important rule, it will even override inline styles.
+            - !important also ger over ruled by the same logic 
+Multiple CSS files:
+        - All cascade n specificity rules will be applied in files.
+        - If selectors has same specificity then styles of later file will be applied.
+        - If selectors has higher specificity in earlier file and lower specificity in 
+          later file, then styles of earlier file will be applied.
+ */
+/* -The width and hight of the element are interdependent if we give the width then
+         highte get adjust by the space occupied by the word/object in it, so both are depedent on each other.
+        - Dont use absolute hight and width because jab screen chota hoga to ye overflow hoga
+         so use max-hight and max-width 
+         use min hight and widhth to avoid overflow of content
+         we may use % for more responsive website
+         max and min mean for to avoid overflow and the element not look weird
+         if parent not have specific height width given then it take full screen(parent's)
+         and the hight wiidht taken from the prents it take the hight and width according to
+         parents content hight and width
+         
+         padding is alway inside the box and increse the size of the box
+         pading + content area + border = widhth and height of the element
+         there is break all word to avoid the overflow when the width is very
+         less.
+         margin not included in element's height width margine means givenig space
+         between element no need
+         border radius don't changes hight weight
+         we may dive margin in negative
+
+
+
+
+         
+         */
+div.img {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  /* background-color: rgb(66, 108, 119); */
+  background-image: linear-gradient(-20deg,
+      #b721ff 0%,
+      #21d4fd 100%);
+  /* background-image: linear-gradient(rgb(178, 187, 101) ,rgb(0, 47, 255), rgb(38, 218, 158)); */
+}
+
+img.pf {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+span.inline-block {
+  margin-top: 10%;
+  background-color: rgb(184, 130, 61);
+  display: inline-block;
+  max-width: 20%;
+  max-height: 20%;
+  word-break: break-all;
+  padding: 10%;
+  font-size: 200%;
+  border: 10px solid red;
+}
+
+iframe {
+  /* max-width: 40%; */
+  max-height: 50%;
+  /* height: 500px; */
+}
+
+/* 
+    outline is apply on autside of the element and it may overflow on other element unlki border
+    and not change hight and width of the element
+    box sizing boder box when apply then it's make the element ka jo padding aur boder hai vo totaly given widhth aur hight me hi aajaiga
+    not increses the actual width and hight of the element
+     
+
+    In inline element the pading margin and border just over flowe on top and bottom element
+    the box proberty only work in left and right side
+    so to aply proper propertyes the display block or inline block proberty use
+    which helph this element to behave normaly
+    inline block is the property where the box property apply but it allow the other elemnt in right and left 
+    two type of inline element
+    replace: it's like inline block ex img etc. when there is content of element come from anywher else
+    then we say it's replace inline
+    non replace:it's simple inline not applicable box model in this. ex span,p and b etc.when the content is given there
+    
+
+    margin and padding in % is calculated from hight width of prents element
+    % not work with outline and border
+    font size is must be less than 6px if font size is given in % but if we just define the font size of 
+    the parent element..
+    and font size is calculated by the font size of the parent element  and defult font size is 16 px of any element
+    */
+div .man {
+  background-color: aqua;
+  min-width: 30%;
+  font-size: 100px;
+  width: 50vw;
+}
+
+/* view-port width is the width of the browser window by giving 50vw we say the width is 50% of browser's window width
+   similarly vh is for hieght of window of the browser 
+   */
+
+/* em and rem is the the thing where the em and rem defult em and rem is 16px and if the perent have some 
+   font size then the 1em is the font size of parrent. but when we use em for give the size of element other 
+   then the fornt then for that element the one em is the size of the fornt of that element if size not given 
+   then parent's fornt size is 1em for them if parent size also not given then the default size taken as 1em as 16px */
+/* rem is like em but it only take font size from the html's fort size if we define the font size of that then
+   we say 1rem is same as the given font size */
+:root {
+  font-size: 16px;
+}
+
+div#li {
+  font-size: 2em;
+  /* background-color: #42e66b; */
+}
+
+.div-li {
+  font-size: 2em;
+  background-color: aqua;
+  margin: 2em;
+  padding: 2em;
+}
+
+.div-li {
+  font-size: 2rem;
+  position: relative;
+  /* top: 200px; */
+}
+
+/* 
+  defult value of the position is statick means not able to move any-where
+  but by seting position as relative then we able to move the elemnt
+  bu seting position 
+  Positioning is used for layout, while margins are used to put padding (space) in between your elements.
+  unset means defult
+*/
+li#one {
+  /* width: 30%; */
+  background-color: rgb(160, 105, 39);
+  position: absolute;
+  /* height: 30%; */
+  font-size: 5em;
+  top: 3200px;
+}
+
+/* 
+  by setting position absolute we say that element gayab hogya ya apni jagha chod diya jhise aisa lagta hai
+  hai ki uski jagha khali so agal bagal wale sare elemnt us prakar areng hojate hai
+*/
+/* 
+  if the element is the below any other element the the width of the whole html is decrese by the sizeof the
+  absolute position's element and it just may overflow the upper element if that have relative position have some value.
+  if not relative position then it only gove below and we able to see it but not inscress the hight.
+
+  just not occupy the space
+  if element given position is high and element not able to fit in that small place yhe we may show the over flow
+  of content.
+  the visivility is depend on the palce of the elemnt in html
+  if the possition absolute elemnt get shifted upper then it just cover the whole element
+  if below then it get cover by the below element.
+  if we give it the inset value then it aply on all way's not like releative only take one 
+  value like top or bottom and left or right.
+  the inset aply like it just leave or move the given unit and the remain space occupy 
+  accodingly
+  and by absolute the position is only take to move is by the screen size in case of hight 
+  the hight is only as the window's size same for width
+  but if the parent or parent's parent so on have position other then static then it take the
+  calculation fron that parent's
+  so to counter this and we want that it only take veiwe port calculation in all case we use 
+  possition fixed. never attached with parent
+*/
+/* position sticky is like absulute but it only eassyly obseravel with scrole bar
+after giving scrol bar woprk same as absolute and the inherit property like 
+perent's parent so on scrol bar is same it use that as a refrence point.
+if no element have scrole bar then it take refrence as the view point
+and stick ther untile the wideth of parent not excusted on scroling */
+
+div.trans {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  /* background-color: rgb(66, 108, 119); */
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
+img#a:hover {
+  /* transform: scale(4);
+  transform-origin: 0 0; */
+  /* background-color: #15d3fd50; */
+  /* opacity: 0.5; */
+  /* transform: translateX(200px); */
+  transform: rotate3d(5, 5, 5, 360deg) scale(2);
+  transition-duration: 2s;
+  transform-origin: 0 0;
+  display: block;
+  /* box-shadow: 10px 10px 10px rgba(22, 202, 133); */
+}
+
+/* 
+  the optacity with background is only applyable for bgc nit for content but
+  if we give it if we define it with the opacity the the element with conent 
+  get targeted not only background.
+  tranform:scal just zoom the element. transform-origin this is give the place
+  from where th transition apply like on above exaple the tran-org 0,0 is apply 
+  from the 0,0 and that point just stay static and other sides zommed
+  tran-rotate is jsut roted the element roted3d is just work in 3d 
+  trans-duration is defint the time(how slow or fast transition take place) 
+  tran-translate is just move the element in given diration with given value
+  but if we use % value then it take refrence from the given element.
+  and roted not take value in %  and translate just overlap or over flow on other 
+  element like absolute
+
+*/
+
+div.shadow-li {
+  margin: 100px;
+  background-color: rgb(255, 255, 255);
+  width: 30%;
+  min-height: 100px;
+  box-shadow: 10px 10px 10px rgba(22, 12, 33, 100);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 10px rgb(132 180 47 / 35%);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+li.shadow-li {
+  font-weight: bolder;
+  padding-top: 25px;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow: 10px 10px 2px #ee3b0471;
+  background-image: url(https://picsum.photos/200);
+}
+
+div p {
+  /* width: max-content; */
+  background-color: #b721ff;
+  /* flex-grow: 1 */
+}
+
+/* 
+max-content is likethe whole content get in the single line. 
+min is like the width is equal to the largest word of the content.
+
+*/
+div.flex-box {
+  height: 300px;
+  background-color: bisque;
+  display: flex;
+  flex-grow: 1;
+  /* justify-content: center; */
+  /* align-items: flex-end; */
+  /* align-items: flex-start ;  */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+  /* flex-direction: column-reverse; */
+  /* flex-direction: row; */
+  /* flex-direction: row-reverse; */
+}
+
+div a {
+  background-color: #21d3ff;
+  /* flex-grow: 1 */
+  align-items: baseline;
+  align-items: center;
+  align-content: center;
+}
+
+div span {
+  background-color: #21ffaa;
+  /* flex-grow: 1 */
+}
+
+/* 
+flex-box is like it make all there direct child display block and 
+try to make then like they are in single line and we also abl to 
+  give the hight width and all with that like display inline block
+  abnd if we give it sertain width and hight then whwn the size of
+  the flex-box decresed then  it lead to the decrease in the size 
+  with equal percentage of all direct child.
+  but the shink only done with the limite the max shring is like
+  the size of largest word of each element.
+  but if we don't give the width to direct child then it try to
+  adjust all chid aggording to content size and if not able to 
+  adjust the according to content size the it just shirink them 
+  in equal ratio but as above mentioned that the min width.
+
+  conetent size here is the width max content
+
+  to avoid the shinking of element we use flex-shrink 0 the value between 
+  0 - 1 is the ratio of percentage of shrink   1 means normal o.5 means 
+  half of the normal shrink
+*/
+/* 
+  there is also flex grow which work like flex-shrinks oppsit way. 
+  it work when there is space avlable then the element just 
+  ocupy the available free space
+  min-width may also work like lower limit of shrink
+
+  ctrl space
+
+  flex box frogy game
+  justify-content: center; it just move the all son to center of the parent
+  flex-shrink: 1;
+  align-items: stretch; this make content to cover the full height which 
+  is avalable on it's parent. not as content hight
+  align-items: flex-start ; it just make the element on top and not occupy 
+  the whole space if height and width not given even through the 
+  align-items stretch applyed
+  align-items: center; make the content to align at center
+  align-items: flex-end; it just make the content at the end of the hight 
+  of parent(niche kar dega)
+
+  justify-content: space-between; it just  distribute the space evenly 
+  betwwen the element but the space at bot side is 0.
+  justify-content: space-around; it just distribute the space at the 
+  between element and side of the element but at both side the space
+  is not same as space between element and that 1/2 of the space in 
+  between element
+
+  justify-content: space-evenly;it just divide the extra space evenly
+  between both side and between the element.
+  flex-direction: row;it just make the colum like structure to row like 
+  element.flex-direction: row-reverse; just make the row's order reverse
+  flex-direction: column ;  make the row like structure to column 
+  flex-direction: column-reverse; make the row like structure to column 
+  like and make niche wala upar, upar wala niche
+  */
+/* 
+  how to give the same width to all element it's by give all alement
+  width 100%
+  flex bases: 100%: vs width in flex bases when we apply the flex-direction 
+  colum then the same value is now3 applicable for hight that only owrk 
+  when display is flex and also when content is more and may overflow
+  as smaller size but in case of flex-basis the size is adjust to avoid
+  overflow.
+  .claa > . is to select the direct chid of the parent and * is for all child
+  gap vs margin 
+  flex-wrape: wrape;
+  gap: 10px;
+  margin:auto means ocupy the max space avalable
+  in flex it work also for top and bottom not in non flex
+  margin-inline: 10px;
+  margin-block: 10px;
+  order: 0; means oder decide or defultorder by html
+  order: 1; means it increse it's order value and occupy the place of next order according to html and this elent just move to the order 1 element's place and also able to give it in negative
+  flex: 100px 1 1;dont'use it
+  144
+  
+*/
+>{
+  
 }
