@@ -1,0 +1,56 @@
+body{
+    background-color: blanchedalmond;
+    margin: 0;
+    font-family: "Cedarville Cursive", cursive;}
+.main{
+    background-color: rgb(0, 162, 255);
+    height: 300px;
+}
+.zero{
+    max-width: 200px;
+    height: 400px;
+    position: absolute;
+    left: 100%;
+    transform: translate(-100%, -13%);
+    /* transform: translateY(-100%); */
+}
+img.propic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid white;
+    display: inline-block;
+}
+.one{
+    font-size: 4em;
+    font-weight: bolder;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+}
+.two{
+    font-size: 1.5em;
+    position: absolute;
+    top: 135px;
+    left: 50px;
+}
+.three{
+    font-size: 1.5em;
+    position: absolute;
+    top: 135px;
+    left: 210px;
+}
+.four{
+    position: absolute;
+    /* width: 50px; */
+    top: 120px;
+    left: 390px;
+}
+.profile{
+    display: inline-block	;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin-left: -15px;
+}
