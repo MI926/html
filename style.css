@@ -286,7 +286,7 @@ li.shadow-li {
 
 div p {
   /* width: max-content; */
-  background-color: #b721ff;
+  /* background-color: #b721ff; */
   /* flex-grow: 1 */
 }
 
@@ -299,7 +299,7 @@ div.flex-box {
   height: 300px;
   background-color: bisque;
   display: flex;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   /* justify-content: center; */
   /* align-items: flex-end; */
   /* align-items: flex-start ;  */
@@ -309,19 +309,33 @@ div.flex-box {
   /* flex-direction: column-reverse; */
   /* flex-direction: row; */
   /* flex-direction: row-reverse; */
+
+  /* flex-wrap: wrap; */
+  /* 
+  like jab parent element ki width son's ke content(width) 
+  se kam ho tab vo niche aajata hai like coloum
+  */
+  /* align-items: baseline; */
+  /* align-content: center; */
+  align-content: space-around;
+  /* align-content: space-between; */
+  /* align-content: space-evenly; */
+ 
 }
 
 div a {
   background-color: #21d3ff;
   /* flex-grow: 1 */
-  align-items: baseline;
-  align-items: center;
-  align-content: center;
+  /* align-items: baseline; */
+  /* align-items: center; */
+  /* align-content: center; */
 }
 
 div span {
   background-color: #21ffaa;
   /* flex-grow: 1 */
+  /* align-content: space-around; */
+
 }
 
 /* 
@@ -388,19 +402,41 @@ try to make then like they are in single line and we also abl to
   as smaller size but in case of flex-basis the size is adjust to avoid
   overflow.
   .claa > . is to select the direct chid of the parent and * is for all child
-  gap vs margin 
+  gap vs margin In CSS, the gap property is used to create space between items
+  in grid and flexbox layouts, while the margin property is used to create 
+  space around elements:
+  Gap
+  The gap property is a shorthand for setting the column-gap and row-gap 
+  properties at once. It's especially useful for creating well-structured 
+  layouts.
+  Margin
+  The margin property controls the space around an element's border. 
+  There are properties for setting the margin for each side of an element (top, right, bottom, and left).
   flex-wrape: wrape;
   gap: 10px;
   margin:auto means ocupy the max space avalable
   in flex it work also for top and bottom not in non flex
-  margin-inline: 10px;
-  margin-block: 10px;
+  margin-inline: 10px; means for left and right side
+  margin-block: 10px; for top and bottom
   order: 0; means oder decide or defultorder by html
-  order: 1; means it increse it's order value and occupy the place of next order according to html and this elent just move to the order 1 element's place and also able to give it in negative
-  flex: 100px 1 1;dont'use it
+  order: 1; means it increse it's order value and occupy the place 
+  of next order according to html and this elent just move to the 
+  order 1 element's place and also able to give it in negative
+  flex: 100px 1 1; it just give 3 flex property flex grow flex 
+  shink and flex basis dont'use it
   144
+
+  align-items: baseline; Items are positioned at the baseline of the container	
+  
+  align-content: center; it just aling the content in center
+  also work in case of flex box.
+  display: inline-flex; is like inline block not make inline block to child it's for self.
+  everything is same element
   
 */
->{
-  
+div.flex-box *{
+  width: 100%;
+  /* background-color: ; */
+  height: 100%;
+  display: inline-flex;
 }
